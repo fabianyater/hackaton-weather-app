@@ -1,0 +1,22 @@
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px 0;
+  padding: 15px 3px;
+}
+
+.details__value, .details__description{
+  margin: 0;
+  font-weight: 300;
+  color: var(--black300);
+}
+
+.details__value{
+  font-size: 1.5em;
+}
+
+.details__description{
+  font-size: 0.8em;
+}

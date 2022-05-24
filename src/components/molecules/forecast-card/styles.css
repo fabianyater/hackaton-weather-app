@@ -1,0 +1,29 @@
+.forecast-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #dadada;
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 110px; */
+  width: 100%;
+  height: 140px;
+  padding: 10px 10px;
+}
+
+.forecast-card__date, .forecast-card__condition {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.forecast-card__value {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.forecast-card__icon {
+  width: 40px;
+  height: 40px;
+}
