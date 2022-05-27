@@ -6,10 +6,12 @@ import './styles.css'
 export const Index = () => {
 
   return (
-    <>
+    <div className='wrapper'>
+      <div className="wrapper__container">
       <Header />
       <Main />
       <Footer />
-    </>
+      </div>
+    </div>
   )
 }
