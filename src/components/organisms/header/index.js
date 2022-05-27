@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchInput from '../../molecules/search-input'
 import searchIcon from '../../../assets/images/search-icon.png'
+import locationIcon from '../../../assets/images/location-icon.svg'
 import './styles.css'
 
 const Header = () => {
@@ -10,7 +11,10 @@ const Header = () => {
         type='search'
         placeholder='Enter a city name'
         description="Search icon"
-        source={searchIcon}
+        leftIcon={true}
+        rigthIcon={true}
+        rightIconSource={searchIcon}
+        leftIconSource={locationIcon}
         onClick={() => { console.log("Búsqueda xd") }}
       />
     </header>

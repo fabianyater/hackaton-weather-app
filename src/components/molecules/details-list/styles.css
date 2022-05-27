@@ -1,10 +1,19 @@
 .details-list {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(218, 218, 218, 0.66);
+  /* background: rgba(255, 255, 255, 0.4); */
+  /* border: 1px solid rgba(218, 218, 218, 0.66); */
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: none;
+}
+
+@media (min-width: 425px) {
+  .details-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -1,0 +1,12 @@
+#root{
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #root{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
