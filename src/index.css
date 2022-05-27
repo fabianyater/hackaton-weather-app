@@ -8,15 +8,19 @@ html {
 }
 
 body {
-  background: linear-gradient(
+  /*  background: linear-gradient(
     162.99deg,
     rgba(162, 210, 255, 0.98) 0.66%,
     rgba(140, 133, 239, 0.52) 98.41%
   );
+  background-attachment: fixed; */
+  background-color: #f0f5ff;
   margin: 0;
   font-family: "Lexend", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: inherit;
 }
 
 code {

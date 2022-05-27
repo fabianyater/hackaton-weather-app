@@ -1,21 +1,36 @@
-.temperature{
+.temperature {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.temperature__title{
+.temperature__title {
   margin: 0;
   font-weight: 600;
   font-size: 80px;
   color: var(--white);
 }
 
-.temperature__degree{
+.temperature__degree {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+}
+
+.temperature__degree--disabled {
+  color: #cad7fb;
+}
+
+
+@media (min-width: 768px) {
+  .temperature {
+    flex-direction: column;
+  }
+  .temperature__degree{
+    flex-direction: row;
+    height: auto;
+  }
 }

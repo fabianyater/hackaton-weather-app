@@ -4,15 +4,25 @@
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 10px 10px;
+  align-items: center;
+  padding: 20px 10px;
 }
 
-.forecast-card__date, .forecast-card__condition {
+.forecast-card__wrapper{
+  width: 100%;
+  display: grid;
+  gap: 5px
+}
+
+.forecast-card__day, .forecast-card__condition {
   font-size: 1em;
   font-weight: 400;
+  margin: 0;
+}
+
+.forecast-card__date{
+  font-size: 0.7em;
+  font-weight: 300;
   margin: 0;
 }
 
@@ -22,6 +32,13 @@
 }
 
 .forecast-card__icon {
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: 80%;
+}
+
+@media (min-width: 768px) {
+  .forecast-card__icon {
+    width: 60%;
+    height: auto;
+  }
 }

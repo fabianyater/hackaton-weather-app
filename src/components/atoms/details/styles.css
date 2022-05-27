@@ -9,18 +9,26 @@
   padding: 15px 3px;
 }
 
+.details__icon{
+  width: 34px;
+  height: 34px;
+  color: var(--white);
+}
+
 .details__value, .details__description{
   width: 100%;
   margin: 0;
-  font-weight: 300;
-  text-align: left;
-  color: var(--black300);
+  text-align: center;
+  color: var(--white);
 }
 
 .details__value{
   font-size: 1.5em;
+  font-weight: normal;
 }
 
 .details__description{
-  font-size: 0.8em;
+  font-weight: 300;
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.82);
 }

@@ -14,3 +14,9 @@
   font-size: 1.5em;
   color: var(--white);
 }
+
+@media (min-width: 768px) {
+  .condition{
+    flex-direction: column;
+  }
+}

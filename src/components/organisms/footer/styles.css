@@ -1,0 +1,13 @@
+footer{
+  background-color: #f5f5f5;
+  padding: 20px 0;
+}
+
+.footer__credits{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.footer__credits > span > a{
+  text-decoration: none;
+}
