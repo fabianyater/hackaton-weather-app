@@ -7,7 +7,12 @@
 
 @media (min-width: 768px) {
   .forecast-list{
-    gap: 30px;
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .forecast-list{
+    width: 100%;
   }
 }

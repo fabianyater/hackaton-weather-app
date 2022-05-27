@@ -1,0 +1,20 @@
+.wrapper{
+  height: 100vh;
+}
+
+.wrapper__container{
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .wrapper__container{
+    display: grid;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper__container{
+    justify-content: center;
+  }
+}
