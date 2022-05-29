@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 import IconButton from '../../atoms/icon-button'
 import './styles.css'
 
-const SearchInput = ({ type, placeholder, leftIconSource, rightIconSource, description, onClick, leftIcon, rigthIcon }) => {
+const SearchInput = ({ type, placeholder, leftIconSource, rightIconSource, buttonType, description, onClick, leftIcon, rigthIcon }) => {
   return (
     <div className='searchbar'>
-      {leftIcon && <IconButton description={description} onClick={onClick} source={leftIconSource} />}
+      {leftIcon && <IconButton description={description} buttonType={buttonType} onClick={onClick} source={leftIconSource} />}
       <input className='searchbar__input' type={type} placeholder={placeholder} />
-      {rigthIcon && <IconButton description={description} onClick={onClick} source={rightIconSource} />}
+      {rigthIcon && <IconButton description={description} buttonType={buttonType} onClick={onClick} source={rightIconSource} />}
     </div>
   )
 }
 
 SearchInput.propTypes = {
   type: PropTypes.string.isRequired,
+  buttonType: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   leftIconSource: PropTypes.string.isRequired,
   rightIconSource: PropTypes.string.isRequired,

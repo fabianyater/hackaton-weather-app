@@ -19,8 +19,8 @@ const Temperature = ({ celsius, farenheit }) => {
 }
 
 Temperature.propTypes = {
-  celsius: PropTypes.string.isRequired,
-  farenheit: PropTypes.string.isRequired
+  celsius: PropTypes.number.isRequired,
+  farenheit: PropTypes.number.isRequired
 }
 
 export default Temperature;

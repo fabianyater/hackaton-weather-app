@@ -9,6 +9,7 @@ const Header = () => {
     <header>
       <SearchInput
         type='search'
+        buttonType='button'
         placeholder='Enter a city name'
         description="Search icon"
         leftIcon={true}

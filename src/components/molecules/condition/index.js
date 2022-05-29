@@ -4,8 +4,10 @@ import './styles.css'
 const Condition = ({ source, alt, condition }) => {
   return (
     <div className='condition'>
-      <img className='condition__image' src={source} alt={alt} />
-      <span className='condition__name'>{condition}</span>
+      <div className='condition__weapper'>
+        <img className='condition__image' src={source} alt={alt} />
+        <span className='condition__name'>{condition}</span>
+      </div>
     </div>
   )
 }

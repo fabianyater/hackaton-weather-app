@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './styles.css'
 
-const IconButton = ({ source, description, onClick }) => {
+const IconButton = ({ source, buttonType, description, onClick }) => {
   return (
-    <button className='searchbar__button' onClick={onClick}>
+    <button className='searchbar__button' type={buttonType} onClick={onClick}>
       <img src={source} alt={description} />
     </button>
   )
@@ -12,6 +12,7 @@ const IconButton = ({ source, description, onClick }) => {
 
 IconButton.propTypes = {
   source: PropTypes.string.isRequired,
+  buttonType: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 }
