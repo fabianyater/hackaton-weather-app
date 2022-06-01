@@ -6,10 +6,7 @@ export function LocationContextProvider({ children }) {
 
   const [contextLocation, setContextLocation] = useState({
     cityName: "",
-    temperature: {
-      celsius: "",
-      farhenheit: "",
-    },
+    temperature: ""
   });
   const value = { contextLocation, setContextLocation };
 

@@ -22,10 +22,6 @@ export const Index = () => {
         .then(res => {
           setContextLocation({
             cityName: res.location.name,
-            temperature: {
-              celsius: res.current.temp_c,
-              farenheit: res.current.temp_f,
-            },
           })
         })
     }

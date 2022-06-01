@@ -46,7 +46,7 @@ const Main = () => {
     </main>
   )
     :
-    (<Shimmer repetitions={2} height={300} />)
+    (<Shimmer height={300} />)
 }
 
 export default Main
