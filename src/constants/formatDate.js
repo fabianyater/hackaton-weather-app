@@ -1,21 +1,24 @@
 const days = ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO'];
-const months = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"];
+
+export const getDay = (date) => {
+  const newDate = new Date(date);
+  let day = days[newDate.getDay()];
+  return day;
+}
 
 export const formatDate = (date) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const newDate = new Date(date);
-  let formatted_date = months[newDate.getMonth()] + ' ' + newDate.getDate() + ' ' + newDate.getFullYear();
-  return formatted_date;
+  let formattedDate = newDate.toLocaleDateString('es-ES', options);
+  return formattedDate;
 }
 
-export const formatDay = (date) => {
-  const newDate = new Date(date);
-  let formatted_day = days[newDate.getDay()].toUpperCase();
-  return formatted_day;
-}
 
-export const formatTime = (date) => {
+export const testDate = (date) => {
   const newDate = new Date(date);
-  
-  let formatted_time = newDate.toLocaleDateString('es-ES');
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  let day = days[newDate.getDay()];
+  let formattedDate = newDate.toLocaleDateString('es-ES', options);
+  let formatted_time = day + ' ' + formattedDate;
   return formatted_time;
 }

@@ -10,10 +10,11 @@ const Footer = () => {
   const [data, setData] = useState();
   const [info, setInfo] = useState();
   const { contextLocation } = useLocationContext()
+  const date = new Date();
 
   useEffect(() => {
     if (contextLocation.cityName) {
-      getForecastWeather(contextLocation.cityName)
+      getForecastWeather(contextLocation.cityName, date.getDate())
         .then((res) => setData(res))
     }
   }, [contextLocation])

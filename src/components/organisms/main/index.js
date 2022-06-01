@@ -9,6 +9,7 @@ import Temperature from '../../molecules/temperature';
 import Condition from '../../molecules/condition';
 import Shimmer from '../../atoms/shimmer';
 import './styles.css'
+import { testDate } from '../../../constants/formatDate';
 
 const Main = () => {
 
@@ -28,7 +29,9 @@ const Main = () => {
 
   return data ? (
     <main className={data.current.temp_c > 20 ? 'main hot' : 'main fresh'}>
-      <h1 className='main__title'>{data.location.name}, <span className='localtime'>{data.location.localtime}</span> </h1>
+      <h1 className='main__title'>{data.location.name} 
+        <span className='localtime'> {testDate(data.location.localtime)}</span>
+      </h1>
       <div className='main__wrapper'>
         <Condition
           source={data.current.condition.icon}
