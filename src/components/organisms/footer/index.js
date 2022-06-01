@@ -17,6 +17,7 @@ const Footer = () => {
       getForecastWeather(contextLocation.cityName, date.getDate())
         .then((res) => setData(res))
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contextLocation])
 
   useEffect(() => {
