@@ -11,6 +11,7 @@ const Temperature = ({ celsius, farenheit }) => {
 
   useEffect(() => {
     setContextLocation({ ...contextLocation, temperature: isCelsius ? "c" : "f" })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCelsius])
 
   return (
