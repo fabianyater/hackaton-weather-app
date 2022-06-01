@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { useEffect } from 'react';
 import { formatDate, getDay } from '../../../constants/formatDate';
 import { useLocationContext } from '../../../context/locationContext';
 import './styles.css'
