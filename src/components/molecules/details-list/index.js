@@ -10,8 +10,8 @@ const DetailsList = ({ details }) => {
   return (
     <div className='details-list'>
       {
-        details.map(({ value, description, source, alt }, index) => (
-          <Details key={index} source={source} alt={alt} value={value} description={description} />
+        details.map(({ value, unit, description, source, alt }, index) => (
+          <Details key={index} source={source} alt={alt} value={value} unit={unit} description={description} />
         ))
       }
     </div>
@@ -23,6 +23,7 @@ DetailsList.propTypes = {
     source: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     value: PropTypes.number.isRequired,
+    unit: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   }))
 }

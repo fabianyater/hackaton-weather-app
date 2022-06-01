@@ -11,7 +11,7 @@ const TemperatureButton = ({ text, onClick, className }) => {
 TemperatureButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  className: PropTypes.bool
+  className: PropTypes.string
 }
 
 export default TemperatureButton

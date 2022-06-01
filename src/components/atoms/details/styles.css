@@ -10,9 +10,8 @@
 }
 
 .details__icon{
-  width: 34px;
-  height: 34px;
-  color: var(--white);
+  width: 23px;
+  height: 23px;
 }
 
 .details__value, .details__description{
@@ -23,7 +22,7 @@
 }
 
 .details__value{
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: normal;
 }
 
@@ -31,4 +30,10 @@
   font-weight: 300;
   font-size: 0.7em;
   color: rgba(255, 255, 255, 0.82);
+}
+
+@media (min-width: 768px) {
+  .details__value span{
+    font-size: 0.8em;
+  }
 }

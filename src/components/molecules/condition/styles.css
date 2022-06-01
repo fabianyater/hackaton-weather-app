@@ -1,8 +1,18 @@
 .condition {
   display: flex;
+  height: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  gap: 10px;
+}
+.condition__weapper{
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .condition__image{
@@ -13,10 +23,4 @@
   font-weight: 400;
   font-size: 1.5em;
   color: var(--white);
-}
-
-@media (min-width: 768px) {
-  .condition{
-    flex-direction: column;
-  }
 }
