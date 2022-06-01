@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { LocationContextProvider } from './context/locationContext';
 import './index.css';
 import { Index } from './pages/index/Index';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Index />
+    <LocationContextProvider>
+      <Index />
+    </LocationContextProvider>
   </React.StrictMode>
 );
 

@@ -6,12 +6,34 @@ const options = {
   }
 };
 
-export const realtimeWeather = async (cityName) => {
+export const getUserLocation = async (lat, lon) => {
+  let res;
 
-  const res = await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${cityName}&lang=es`, options)
+  await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${lat}%2C${lon}&lang=es`, options)
     .then(response => response.json())
-    /* .then(response => console.log(response))
-    .catch(err => console.error(err)); */
-console.log(res)
+    .then(response => res = response)
+    .catch(err => console.error(err));
   return res;
 }
+
+export const getRealtimeWeather = async (cityName) => {
+  let res;
+
+  await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${cityName}&lang=es`, options)
+    .then(response => response.json())
+    .then(response => res = response)
+    .catch(err => console.error(err));
+  return res;
+}
+
+export const getForecastWeather = async (cityName, date) => {
+  let res;
+
+  await fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3&lang=es&dt=${date}`, options)
+    .then(response => response.json())
+    .then(response => res = response)
+    .catch(err => console.error(err));
+
+  return res;
+}
+

@@ -8,8 +8,16 @@
   margin: 0 auto;
   gap: 20px;
   padding-top: 20px;
-  background: linear-gradient(180deg, #74A3FE 0%, #A58FFD 100%);
+  /* background: linear-gradient(180deg, #74A3FE 0%, #A58FFD 100%); */
   border-radius: 10px;
+}
+
+.hot{
+  background: linear-gradient(180deg, #74A3FE 0%, #A58FFD 100%);
+}
+
+.fresh{
+  background-color: #152C39;
 }
 
 .main__title {
@@ -17,6 +25,10 @@
   font-weight: 400;
   font-size: 2em;
   margin: 0;
+}
+
+.localtime{
+  font-size: 0.8em;
 }
 
 .main__wrapper {

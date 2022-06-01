@@ -1,38 +1,34 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
-import { realtimeWeather } from '../../../services/weather-api'
+import { getRealtimeWeather } from '../../../services/weather-api'
 import { detailsData } from './detailsData';
+import { LocationContext } from '../../../context/locationContext';
 
 import DetailsList from '../../molecules/details-list';
 import Temperature from '../../molecules/temperature';
 import Condition from '../../molecules/condition';
+import Shimmer from '../../atoms/shimmer';
 import './styles.css'
-
-
 
 const Main = () => {
 
-  const cityName = 'Florencia';
   const [data, setData] = useState();
   const [info, setInfo] = useState();
+  const { contextLocation } = useContext(LocationContext)
 
   useEffect(() => {
-    realtimeWeather(cityName)
-      .then((res) => setData(res))
-  }, [])
+    if (contextLocation.cityName)
+      getRealtimeWeather(contextLocation.cityName)
+        .then((res) => setData(res))
+  }, [contextLocation])
 
   useEffect(() => {
-    if (data) {
-      setInfo(detailsData(data))
-    }
+    (data) && setInfo(detailsData(data))
   }, [data])
 
-
-
-  return data && (
-
-    <main className='main'>
-      <h1 className='main__title'>{data.location.name}</h1>
+  return data ? (
+    <main className={data.current.temp_c > 20 ? 'main hot' : 'main fresh'}>
+      <h1 className='main__title'>{data.location.name}, <span className='localtime'>{data.location.localtime}</span> </h1>
       <div className='main__wrapper'>
         <Condition
           source={data.current.condition.icon}
@@ -49,6 +45,8 @@ const Main = () => {
       </div>
     </main>
   )
+    :
+    (<Shimmer repetitions={2} height={300} />)
 }
 
 export default Main

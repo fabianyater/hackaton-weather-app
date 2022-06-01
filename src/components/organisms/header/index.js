@@ -1,10 +1,22 @@
 import React from 'react'
-import SearchInput from '../../molecules/search-input'
-import searchIcon from '../../../assets/images/search-icon.png'
+
 import locationIcon from '../../../assets/images/location-icon.svg'
+import { useLocationContext } from '../../../context/locationContext'
+import { getRealtimeWeather } from '../../../services/weather-api'
+import SearchInput from '../../molecules/search-input'
 import './styles.css'
 
 const Header = () => {
+
+  const { contextLocation } = useLocationContext();
+
+
+  const getLocation = () => {
+    if (contextLocation.cityName)
+        getRealtimeWeather(contextLocation.cityName)
+          .then((res) => console.log(res))
+  }
+
   return (
     <header>
       <SearchInput
@@ -12,11 +24,8 @@ const Header = () => {
         buttonType='button'
         placeholder='Enter a city name'
         description="Search icon"
-        leftIcon={true}
-        rigthIcon={true}
-        rightIconSource={searchIcon}
-        leftIconSource={locationIcon}
-        onClick={() => { console.log("Búsqueda xd") }}
+        iconSource={locationIcon}
+        onClick={() => getLocation()}
       />
     </header>
   )

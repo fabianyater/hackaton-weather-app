@@ -1,0 +1,35 @@
+.shimmers {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.shimmer {
+  width: 100%;
+
+  border-radius: 8px;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-comp) 0%,
+    var(--color-comp) 40%,
+    var(--color-background) 50%,
+    var(--color-background) 55%,
+    var(--color-comp) 65%,
+    var(--color-comp) 100%
+  );
+
+  background-size: 400%;
+  animation: shimmer 1500ms infinite;
+
+  cursor: wait;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 100%;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
