@@ -21,7 +21,7 @@ const Footer = () => {
         .then((res) => setData(res))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [contextLocation])
+  }, [contextLocation.cityName])
 
   useEffect(() => {
     (data) && setInfo(forecast(data))
