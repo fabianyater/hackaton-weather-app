@@ -26,13 +26,6 @@
 
 
 @media (min-width: 768px) {
-  .temperature {
-    flex-direction: column;
-  }
-  .temperature__degree{
-    flex-direction: row;
-    height: auto;
-  }
   .temperature__title{
     font-size: 5em;
   }
