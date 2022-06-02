@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { getRealtimeWeather } from '../../../services/weather-api'
 import { detailsData } from './detailsData';
 import { LocationContext } from '../../../context/locationContext';
-import { testDate } from '../../../constants/formatDate';
+import { formatDate, getDay, testDate } from '../../../constants/formatDate';
 import { RaceBy } from '@uiball/loaders'
 
 import DetailsList from '../../molecules/details-list';
@@ -31,7 +31,7 @@ const Main = () => {
     <>
       <main className={data.current.temp_c > 20 ? 'main hot' : 'main fresh'}>
         <h1 className='main__title'>{data.location.name}
-          <span className='localtime'> {testDate(data.location.localtime)}</span>
+          <span className='localtime'>{getDay(data.location.localtime, true)}  {formatDate(data.location.localtime)}</span>
         </h1>
         <div className='main__wrapper'>
           <Condition
