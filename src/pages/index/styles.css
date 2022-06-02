@@ -4,7 +4,6 @@
 
 .wrapper__container{
   height: 100%;
-  width: 90%;
   margin: 0 auto;
 }
 
@@ -17,6 +16,14 @@
 
 @media (min-width: 1024px) {
   .wrapper__container{
-    justify-content: center;
+    transition: ease-out 300ms;
+    width: 70%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrapper__container{
+    transition: ease-in 300ms;
+    width: 60%;
   }
 }

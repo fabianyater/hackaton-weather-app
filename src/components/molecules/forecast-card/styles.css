@@ -38,7 +38,7 @@
 
 @media (min-width: 768px) {
   .forecast-card__icon {
-    width: 60%;
+    width: auto;
     height: auto;
   }
 }

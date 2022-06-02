@@ -21,7 +21,7 @@ const Main = () => {
     if (contextLocation.cityName)
       getRealtimeWeather(contextLocation.cityName)
         .then((res) => setData(res))
-  }, [contextLocation])
+  }, [contextLocation.cityName])
 
   useEffect(() => {
     (data) && setInfo(detailsData(data))
@@ -29,8 +29,8 @@ const Main = () => {
 
   return data ? (
     <>
-      <main className={data.current.temp_c > 20 ? 'main hot' : 'main fresh'}>
-        <h1 className='main__title'>{data.location.name}
+      <main className={data.current.temp_c > 29 ? 'main hot' : 'main fresh'}>
+        <h1 className='main__title'>{data.location.name}, {data.location.region}, {data.location.country}
           <span className='localtime'>{getDay(data.location.localtime, true)}  {formatDate(data.location.localtime)}</span>
         </h1>
         <div className='main__wrapper'>
