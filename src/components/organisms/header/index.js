@@ -12,13 +12,14 @@ import './styles.css'
 const Header = () => {
 
   const { location } = useCurrentLocation(geolocationOptions);
-  const { setContextLocation } = useLocationContext();
+  const { contextLocation, setContextLocation } = useLocationContext();
 
   const getLocation = () => {
     if (location) {
       getUserLocation(location.latitude, location.longitude)
         .then(res => {
           setContextLocation({
+            ...contextLocation,
             cityName: res.location.name,
           })
         })
