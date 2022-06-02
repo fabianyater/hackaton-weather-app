@@ -34,15 +34,16 @@ const Main = () => {
           <span className='localtime'>{getDay(data.location.localtime, true)}  {formatDate(data.location.localtime)}</span>
         </h1>
         <div className='main__wrapper'>
-          <Condition
-            source={data.current.condition.icon}
-            alt='Time condition'
-            condition={data.current.condition.text}
-          />
 
           <Temperature
             celsius={data.current.temp_c}
             farenheit={data.current.temp_f}
+          />
+
+          <Condition
+            source={data.current.condition.icon}
+            alt='Time condition'
+            condition={data.current.condition.text}
           />
 
           {info && <DetailsList details={info} />}
