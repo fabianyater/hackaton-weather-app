@@ -33,7 +33,10 @@
 }
 
 @media (min-width: 768px) {
+  .details__value{
+    font-size: 1.5em;
+  }
   .details__value span{
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }

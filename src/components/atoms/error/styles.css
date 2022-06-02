@@ -1,5 +1,29 @@
 .error{
-  color: red;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #152C39;
+  color: var(--white);
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.error h2 {
+  font-size: 1em;
+  text-align: center;
+}
+
+.error p{
+  font-size: 0.8em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .error {
+    font-size: 1.5rem;
+  }
 }

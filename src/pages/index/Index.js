@@ -16,7 +16,7 @@ export const Index = () => {
 
   const { location, error } = useCurrentLocation(geolocationOptions);
   const { setContextLocation } = useLocationContext();
-
+  
   useEffect(() => {
     if (location) {
       getUserLocation(location.latitude, location.longitude)
@@ -38,8 +38,8 @@ export const Index = () => {
     </div>
   ) :
     (
-      <div>
-        {error ? <Error error={error} /> : <Loader />}
+      <div className="wrapper__error">
+        {error ? <Error error={error.code} /> : <Loader />}
       </div>
     )
 }
