@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-import { formatDate, getDay } from '../../../constants/formatDate';
+
 import { useLocationContext } from '../../../context/locationContext';
+import { getDay } from '../../../constants/formatDate';
 import './styles.css'
 
 const ForecastCard = ({ date, temperature_c, temperature_f, source, condition }) => {

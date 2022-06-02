@@ -43,10 +43,10 @@ const Footer = () => {
     :
     (
       <RaceBy
-        size={80}
-        lineWeight={5}
+        size={200}
+        lineWeight={10}
         speed={1.4}
-        color="black"
+        color="gray"
       />
     )
 }

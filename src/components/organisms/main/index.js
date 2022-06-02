@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
-
-import { getRealtimeWeather } from '../../../services/weather-api'
-import { detailsData } from './detailsData';
-import { LocationContext } from '../../../context/locationContext';
-import { formatDate, getDay, testDate } from '../../../constants/formatDate';
 import { RaceBy } from '@uiball/loaders'
+
+import { formatDate, getDay } from '../../../constants/formatDate';
+import { getRealtimeWeather } from '../../../services/weather-api'
+import { LocationContext } from '../../../context/locationContext';
+import { detailsData } from './detailsData';
 
 import DetailsList from '../../molecules/details-list';
 import Temperature from '../../molecules/temperature';
@@ -53,10 +53,10 @@ const Main = () => {
     :
     (
       <RaceBy
-        size={80}
-        lineWeight={5}
+        size={200}
+        lineWeight={10}
         speed={1.4}
-        color="black"
+        color="blue"
       />
     )
 }
