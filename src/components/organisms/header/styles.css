@@ -1,6 +1,13 @@
 header{
-  margin: 15px;
+  width: 90%;
+  margin: 20px auto;
   height: 50px;
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  header{
+    width: 100%;
+  }
 }

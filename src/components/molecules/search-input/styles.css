@@ -1,18 +1,9 @@
 .searchbar {
   display: flex;
   margin: 0 auto;
-  width: 90%;
-}
-
-.searchbar__input {
   width: 100%;
-  background: transparent;
-  border-style: none;
-  outline: none;
-  border-bottom: 2px solid #74A3FE;
 }
 
-.searchbar__input::placeholder{
-  color: #74A3FE;
-  font-size: 1.2em;
+.searchbar__input{
+  width: 100%;
 }

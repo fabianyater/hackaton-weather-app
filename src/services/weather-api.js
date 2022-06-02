@@ -37,3 +37,13 @@ export const getForecastWeather = async (cityName, date) => {
   return res;
 }
 
+export const searchCityWeather = async (cityName) => {
+  let res;
+
+  await fetch(`https://weatherapi-com.p.rapidapi.com/search.json?q=${cityName}&lang=es`, options)
+    .then(response => response.json())
+    .then(response => res = response)
+    .catch(err => console.error(err));
+
+  return res;
+}
