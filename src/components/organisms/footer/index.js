@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
+
 import { useLocationContext } from '../../../context/locationContext'
 import { getForecastWeather } from '../../../services/weather-api'
+import { RaceBy } from '@uiball/loaders'
+
 import ForecastCardsList from '../../molecules/forecast-cards-list'
 import forecast from './formattedData'
 import './styles.css'
@@ -17,14 +20,14 @@ const Footer = () => {
       getForecastWeather(contextLocation.cityName, date.getDate())
         .then((res) => setData(res))
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contextLocation])
 
   useEffect(() => {
     (data) && setInfo(forecast(data))
   }, [data])
 
-  
+
 
   return data ? (
     <footer>
@@ -38,7 +41,14 @@ const Footer = () => {
     </footer>
   )
     :
-    (<h1>Cargando...</h1>)
+    (
+      <RaceBy
+        size={80}
+        lineWeight={5}
+        speed={1.4}
+        color="black"
+      />
+    )
 }
 
 export default Footer
