@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'
+
 import { useLocationContext } from '../../../context/locationContext';
+
 import TemperatureButton from '../../atoms/temperature-button';
 import './styles.css'
 
@@ -11,7 +13,7 @@ const Temperature = ({ celsius, farenheit }) => {
 
   useEffect(() => {
     setContextLocation({ ...contextLocation, temperature: isCelsius ? "c" : "f" })
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCelsius])
 
   return (

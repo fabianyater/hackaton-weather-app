@@ -13,17 +13,17 @@
 }
 
 .hot{
-  background: linear-gradient(180deg, #74A3FE 0%, #A58FFD 100%);
+  background: linear-gradient(180deg,#f1a189 0%, #edb87f  100%);
 }
 
 .fresh{
-  background-color: #152C39;
+  background: linear-gradient(180deg, #1756c1 0%, #1aa2fe 100%);
 }
 
 .main__title {
   color: var(--white);
   font-weight: 400;
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0;
   display: grid;
 }
@@ -53,6 +53,10 @@
   
   .main__title{
     font-size: 2em;
+  }
+
+  .localtime{
+    font-size: 0.8;
   }
 }
 

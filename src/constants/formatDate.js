@@ -3,9 +3,9 @@ const days = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', '
 export const getDay = (date, startsAtSunday) => {
   const newDate = new Date(date);
   let day;
-  if(startsAtSunday){
-    day = days[newDate.getDay()-1];
-  }else{
+  if (startsAtSunday) {
+    day = days[newDate.getDay() - 1];
+  } else {
     day = days[newDate.getDay()];
   }
   return day;

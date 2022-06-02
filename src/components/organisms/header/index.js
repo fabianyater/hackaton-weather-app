@@ -1,20 +1,28 @@
 import React from 'react'
 
-import locationIcon from '../../../assets/images/location-icon.svg'
 import { useLocationContext } from '../../../context/locationContext'
-import { getRealtimeWeather } from '../../../services/weather-api'
+import { geolocationOptions } from '../../../constants/options'
+import { getUserLocation } from '../../../services/weather-api'
+
+import locationIcon from '../../../assets/images/location-icon.svg'
+import useCurrentLocation from '../../../hooks/useGeoLocation'
 import SearchInput from '../../molecules/search-input'
 import './styles.css'
 
 const Header = () => {
 
-  const { contextLocation } = useLocationContext();
-
+  const { location } = useCurrentLocation(geolocationOptions);
+  const { setContextLocation } = useLocationContext();
 
   const getLocation = () => {
-    if (contextLocation.cityName)
-        getRealtimeWeather(contextLocation.cityName)
-          .then((res) => console.log(res))
+    if (location) {
+      getUserLocation(location.latitude, location.longitude)
+        .then(res => {
+          setContextLocation({
+            cityName: res.location.name,
+          })
+        })
+    }
   }
 
   return (
@@ -25,7 +33,7 @@ const Header = () => {
         placeholder='Enter a city name'
         description="Search icon"
         iconSource={locationIcon}
-        onClick={() => getLocation()}
+        onClick={getLocation}
       />
     </header>
   )

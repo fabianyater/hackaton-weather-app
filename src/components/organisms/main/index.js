@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
-
-import { getRealtimeWeather } from '../../../services/weather-api'
-import { detailsData } from './detailsData';
-import { LocationContext } from '../../../context/locationContext';
-import { formatDate, getDay, testDate } from '../../../constants/formatDate';
 import { RaceBy } from '@uiball/loaders'
+
+import { formatDate, getDay } from '../../../constants/formatDate';
+import { getRealtimeWeather } from '../../../services/weather-api'
+import { LocationContext } from '../../../context/locationContext';
+import { detailsData } from './detailsData';
 
 import DetailsList from '../../molecules/details-list';
 import Temperature from '../../molecules/temperature';
@@ -21,7 +21,7 @@ const Main = () => {
     if (contextLocation.cityName)
       getRealtimeWeather(contextLocation.cityName)
         .then((res) => setData(res))
-  }, [contextLocation])
+  }, [contextLocation.cityName])
 
   useEffect(() => {
     (data) && setInfo(detailsData(data))
@@ -29,8 +29,8 @@ const Main = () => {
 
   return data ? (
     <>
-      <main className={data.current.temp_c > 20 ? 'main hot' : 'main fresh'}>
-        <h1 className='main__title'>{data.location.name}
+      <main className={data.current.temp_c > 29 ? 'main hot' : 'main fresh'}>
+        <h1 className='main__title'>{data.location.name}, {data.location.region}, {data.location.country}
           <span className='localtime'>{getDay(data.location.localtime, true)}  {formatDate(data.location.localtime)}</span>
         </h1>
         <div className='main__wrapper'>
@@ -53,10 +53,10 @@ const Main = () => {
     :
     (
       <RaceBy
-        size={80}
-        lineWeight={5}
+        size={200}
+        lineWeight={10}
         speed={1.4}
-        color="black"
+        color="blue"
       />
     )
 }
