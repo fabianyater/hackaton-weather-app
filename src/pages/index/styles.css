@@ -1,5 +1,7 @@
-.wrapper{
+.wrapper,
+.wrapper__error {
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .wrapper__container{

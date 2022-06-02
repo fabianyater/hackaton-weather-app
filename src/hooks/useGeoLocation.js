@@ -13,20 +13,23 @@ const useCurrentLocation = (options = {}) => {
     })
   }
 
-  const handleError = (error) => {
-    setError(error.message)
+  const handleError = (err) => {
+    setError({
+      code: err.code,
+      message: err.message
+    })
   }
 
   useEffect(() => {
     const { geolocation } = navigator
 
-
     if (!geolocation) {
-      setError('Geolocation is not supported.')
+      setError('Geolocalización no soportada en el navegador actual')
       return
     }
 
     geolocation.getCurrentPosition(handleSuccess, handleError, options)
+    // eslint-disable-next-line
   }, [options])
 
   return { location, error }
