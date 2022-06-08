@@ -6,44 +6,31 @@ const options = {
   }
 };
 
-export const getUserLocation = async (lat, lon) => {
-  let res;
-
-  await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${lat}%2C${lon}&lang=es`, options)
+export const getUserLocation = (lat, lon) => {
+  return fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${lat}%2C${lon}&lang=es`, options)
     .then(response => response.json())
-    .then(response => res = response)
+    .then(response => response)
     .catch(err => console.error(err));
-  return res;
 }
 
-export const getRealtimeWeather = async (cityName) => {
-  let res;
-
-  await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${cityName}&lang=es`, options)
+export const getRealtimeWeather = (cityName) => {
+  return fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${cityName}&lang=es`, options)
     .then(response => response.json())
-    .then(response => res = response)
+    .then(response => response)
     .catch(err => console.error(err));
-  return res;
 }
 
-export const getForecastWeather = async (cityName, date) => {
-  let res;
-
-  await fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3&lang=es&dt=${date}`, options)
+export const getForecastWeather = (cityName, date) => {
+  return fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3&lang=es&dt=${date}`, options)
     .then(response => response.json())
-    .then(response => res = response)
+    .then(response => response)
     .catch(err => console.error(err));
 
-  return res;
 }
 
-export const searchCityWeather = async (cityName) => {
-  let res;
-
-  await fetch(`https://weatherapi-com.p.rapidapi.com/search.json?q=${cityName}&lang=es`, options)
+export const searchCityWeather = (cityName) => {
+  return fetch(`https://weatherapi-com.p.rapidapi.com/search.json?q=${cityName}&lang=es`, options)
     .then(response => response.json())
-    .then(response => res = response)
+    .then(response => response)
     .catch(err => console.error(err));
-
-  return res;
 }
